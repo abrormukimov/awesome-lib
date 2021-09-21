@@ -15,11 +15,6 @@ Additional description about the project and its features.
 - Javascript
 - Technologies used
 
-## Live Demo
-
-[Live Demo Link](https://raw.githack.com/abrormukimov/awesome-lib/tree/feature)
-
-
 ## Getting Started
 
 This project can be used to store books in the online library. Users can enter the title and the author of a book. Also, it allows users to remove books from the library.
@@ -51,7 +46,7 @@ To get a local copy up and running follow these simple example steps.
 
 Contributions, issues, and feature requests are welcome!
 
-Feel free to check the [issues page](../../issues/).
+Feel free to check the [issues page](https://github.com/abrormukimov/awesome-lib/issues).
 
 ## Show your support
 
