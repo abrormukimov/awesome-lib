@@ -1,6 +1,6 @@
 const booksCtn = document.querySelector('.books-ctn');
 const form = document.getElementById('form');
-const myBooks = [{title: 'a', author: 'b'}];
+const myBooks = [];
 
 function Book(title, author) {
   this.title = title;
@@ -8,11 +8,14 @@ function Book(title, author) {
 }
 
 function removeBook(title) {
-  for (let i = 0; i < myBooks.length; i++) {
-    if (myBooks[i].title === title) {
-      myBooks.splice(i, 1);
+  const store = JSON.parse(localStorage.getItem('myBooks'));
+  for (let i = 0; i < store.length; i++) {
+    if (store[i].title === title) {
+      store.splice(i, 1);
     }
   }
+  myBooks = store;
+  saveToLocalStorage(myBooks);
 }
 
 function render(book) {
@@ -52,6 +55,17 @@ function clearInput() {
   author.value = '';
 }
 
+function getFromLocalStorage() {
+  if (localStorage) {
+    const books = JSON.parse(localStorage.getItem('myBooks'));
+    myBooks = books;
+  }
+}
+
+function saveToLocalStorage(arr) {
+  localStorage.setItem('myBooks', JSON.stringify(arr));
+}
+
 displayBooks()
 
 document.addEventListener('HTMLContentLoaded', displayBooks);
@@ -62,12 +76,12 @@ form.addEventListener('submit', (e) => {
   const author = document.querySelector('.author').value;
   const book = new Book(title, author);
   myBooks.push(book);
+  saveToLocalStorage(book);
   render(book);
   clearInput();
 });
 
 if (myBooks.length > 0) {
-  const remove = document.querySelector('.remove');
   booksCtn.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove')) {
       e.target.parentElement.remove();
