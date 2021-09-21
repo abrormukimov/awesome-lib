@@ -8,10 +8,14 @@ function Book(title, author) {
 }
 
 function removeBook(title) {
-  myBooks.filter(book => book.title !== title);
+  for (let i = 0; i < myBooks.length; i++) {
+    if (myBooks[i].title === title) {
+      myBooks.splice(i, 1);
+    }
+  }
 }
 
-function addBook(book) {
+function render(book) {
   const bookSection = document.createElement('div');
   const title = document.createElement('p');
   const author = document.createElement('p');
@@ -22,7 +26,7 @@ function addBook(book) {
   title.classList.add('book-title');
   author.classList.add('book-author');
   remove.classList.add('remove');
-  remove.classList.add(`${book.title}`);
+  remove.setAttribute('data-title', `${book.title}`);
 
   title.textContent = `${book.title}`;
   author.textContent = `${book.author}`;
@@ -37,8 +41,15 @@ function addBook(book) {
 
 function displayBooks() {
   myBooks.forEach((book) => {
-    addBook(book);
+    render(book);
   });
+}
+
+function clearInput() {
+  const title = document.querySelector('.title');
+  const author = document.querySelector('.author');
+  title.value = '';
+  author.value = '';
 }
 
 displayBooks()
@@ -51,11 +62,18 @@ form.addEventListener('submit', (e) => {
   const author = document.querySelector('.author').value;
   const book = new Book(title, author);
   myBooks.push(book);
-  addBook(book);
+  render(book);
+  clearInput();
 });
 
-if (myBooks.length !== 0) {
+if (myBooks.length > 0) {
   const remove = document.querySelector('.remove');
-  remove.addEventListener('click', removeBook);
+  booksCtn.addEventListener('click', (e) => {
+    if (e.target.classList.contains('remove')) {
+      e.target.parentElement.remove();
+      const title = e.target.getAttribute('data-title');
+      removeBook(title);
+    }
+  });
 }
 
