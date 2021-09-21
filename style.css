@@ -1,0 +1,13 @@
+html {
+  width: 500px;
+  margin: 0 auto;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+#form * {
+  display: block;
+}
