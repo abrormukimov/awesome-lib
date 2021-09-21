@@ -2,9 +2,9 @@
 
 # Awesome books
 
-> One paragraph statement about the project.
+> This is a library project with a great UX and a beautiful UI.
 
-![screenshot](./app_screenshot.png)
+![screenshot](./screenshot.png)
 
 Additional description about the project and its features.
 
@@ -17,7 +17,7 @@ Additional description about the project and its features.
 
 ## Live Demo
 
-[Live Demo Link](https://livedemo.com)
+[Live Demo Link](https://raw.githack.com/abrormukimov/awesome-lib/tree/feature)
 
 
 ## Getting Started
@@ -41,9 +41,7 @@ To get a local copy up and running follow these simple example steps.
 
 
 
-## Authors
-
-👤 **Author1**
+## Author
 
 - GitHub: [@abrormukimov](https://github.com/abrormukimov)
 - Twitter: [@abrormukimov](https://twitter.com/abrormukimov)
