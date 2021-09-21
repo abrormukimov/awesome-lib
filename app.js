@@ -45,10 +45,9 @@ function clearInput() {
 }
 
 function getFromLocalStorage() {
-  if (localStorage) {
-    const books = JSON.parse(localStorage.getItem('myBooks'));
-    myBooks = books;
-  }
+  const books = JSON.parse(localStorage.getItem('myBooks'));
+  myBooks = books;
+  return myBooks;
 }
 
 function saveToLocalStorage(arr) {
@@ -66,8 +65,6 @@ function removeBook(title) {
   saveToLocalStorage(myBooks);
 }
 
-displayBooks();
-
 document.addEventListener('HTMLContentLoaded', displayBooks);
 
 form.addEventListener('submit', (e) => {
@@ -75,13 +72,13 @@ form.addEventListener('submit', (e) => {
   const title = document.querySelector('.title').value;
   const author = document.querySelector('.author').value;
   const book = new Book(title, author);
-  myBooks.push(book);
-  saveToLocalStorage(book);
   render(book);
+  myBooks.push(book);
+  saveToLocalStorage(myBooks);
   clearInput();
 });
 
-if (myBooks.length > 0) {
+if (myBooks) {
   booksCtn.addEventListener('click', (e) => {
     if (e.target.classList.contains('remove')) {
       e.target.parentElement.remove();
