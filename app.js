@@ -1,21 +1,10 @@
 const booksCtn = document.querySelector('.books-ctn');
 const form = document.getElementById('form');
-const myBooks = [];
+let myBooks = [];
 
 function Book(title, author) {
   this.title = title;
   this.author = author;
-}
-
-function removeBook(title) {
-  const store = JSON.parse(localStorage.getItem('myBooks'));
-  for (let i = 0; i < store.length; i++) {
-    if (store[i].title === title) {
-      store.splice(i, 1);
-    }
-  }
-  myBooks = store;
-  saveToLocalStorage(myBooks);
 }
 
 function render(book) {
@@ -66,7 +55,18 @@ function saveToLocalStorage(arr) {
   localStorage.setItem('myBooks', JSON.stringify(arr));
 }
 
-displayBooks()
+function removeBook(title) {
+  const store = getFromLocalStorage();
+  for (let i = 0; i < store.length; i += 1) {
+    if (store[i].title === title) {
+      store.splice(i, 1);
+    }
+  }
+  myBooks = store;
+  saveToLocalStorage(myBooks);
+}
+
+displayBooks();
 
 document.addEventListener('HTMLContentLoaded', displayBooks);
 
@@ -90,4 +90,3 @@ if (myBooks.length > 0) {
     }
   });
 }
-
