@@ -45,9 +45,9 @@ To get a local copy up and running follow these simple example steps.
 
 👤 **Author1**
 
-- GitHub: [@githubhandle](https://github.com/abrormukimov)
-- Twitter: [@twitterhandle](https://twitter.com/abrormukimov)
-- LinkedIn: [LinkedIn](https://www.linkedin.com/in/abror-mukimov/)
+- GitHub: [@abrormukimov](https://github.com/abrormukimov)
+- Twitter: [@abrormukimov](https://twitter.com/abrormukimov)
+- LinkedIn: [AbrorMukimov](https://www.linkedin.com/in/abror-mukimov/)
 
 ## 🤝 Contributing
 
