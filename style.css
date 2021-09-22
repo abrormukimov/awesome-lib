@@ -10,6 +10,12 @@ html {
   margin-bottom: 10px;
 }
 
+#form {
+  width: 300px;
+  margin: 0 auto;
+  position: relative;
+}
+
 #form * {
   display: block;
   margin: 15px auto;
@@ -23,10 +29,17 @@ html {
   background-color: rgb(233, 233, 233);
 }
 
+#form input {
+  width: 300px;
+}
+
 #form .add {
   background-color: rgb(42, 42, 247);
   color: white;
   border: 1px solid rgb(42, 42, 247);
+  position: absolute;
+  top: 70px;
+  left: 275px;
 }
 
 #form .add:hover {
@@ -43,17 +56,27 @@ html {
   margin-top: 20px;
 }
 
+hr {
+  width: 100px;
+  margin: 30px auto;
+  font-weight: bold;
+}
+
 .main-title {
   text-align: center;
 }
 
 .book-section {
-  border: 1px solid black;
+  border: none;
   border-radius: 3px;
   display: flex;
   align-items: center;
   background-color: rgb(244, 244, 244);
   padding: 10px;
+}
+
+.book-section:nth-child(odd) {
+  background: white;
 }
 
 .book-title {
