@@ -15,6 +15,8 @@ Additional description about the project and its features.
 - Javascript
 - Technologies used
 
+## Live Demo ![Live](https://abrormukimov.github.io/awesome-lib/)
+
 ## Getting Started
 
 This project can be used to store books in the online library. Users can enter the title and the author of a book. Also, it allows users to remove books from the library.
