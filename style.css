@@ -1,6 +1,7 @@
 html {
   width: 500px;
   margin: 0 auto;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 * {
@@ -11,4 +12,71 @@ html {
 
 #form * {
   display: block;
+  margin: 15px auto;
+}
+
+#form input, #form button {
+  padding: 5px 10px;
+  border: none;
+  border-radius: 3px;
+  outline: none;
+  background-color: rgb(233, 233, 233);
+}
+
+#form .add {
+  background-color: rgb(42, 42, 247);
+  color: white;
+  border: 1px solid rgb(42, 42, 247);
+}
+
+#form .add:hover {
+  color: blue;
+  font-weight: bold;
+  background-color: white;
+  cursor: pointer;
+}
+
+.form-title {
+  text-align: center;
+  font-weight: bold;
+  font-size: 24px;
+  margin-top: 20px;
+}
+
+.main-title {
+  text-align: center;
+}
+
+.book-section {
+  border: 1px solid black;
+  border-radius: 3px;
+  display: flex;
+  align-items: center;
+  background-color: rgb(244, 244, 244);
+  padding: 10px;
+}
+
+.book-title {
+  flex: 3;
+  font-weight: bold;
+}
+
+.book-author {
+  flex: 5;
+}
+
+.remove {
+  flex: 1;
+  border: 1px solid rgb(245, 124, 124); 
+  border-radius: 4px;
+  background: rgb(245, 124, 124);
+  padding: 4px 6px;
+  color: white;
+}
+
+.remove:hover {
+  background: white;
+  color: red;
+  cursor: pointer;
+  border: 1px solid red;
 }
