@@ -7,7 +7,7 @@ function Book(title, author) {
   this.author = author;
 }
 
-function render(book) {
+const render = (book) => {
   const bookSection = document.createElement('div');
   const title = document.createElement('p');
   const author = document.createElement('p');
@@ -29,32 +29,32 @@ function render(book) {
   bookSection.appendChild(author);
   bookSection.appendChild(remove);
   bookSection.appendChild(hr);
-}
+};
 
-function displayBooks() {
+const displayBooks = () => {
   myBooks.forEach((book) => {
     render(book);
   });
-}
+};
 
-function clearInput() {
+const clearInput = () => {
   const title = document.querySelector('.title');
   const author = document.querySelector('.author');
   title.value = '';
   author.value = '';
-}
+};
 
-function getFromLocalStorage() {
+const getFromLocalStorage = () => {
   const books = JSON.parse(localStorage.getItem('myBooks'));
   myBooks = books;
   return myBooks;
-}
+};
 
-function saveToLocalStorage(arr) {
+const saveToLocalStorage = (arr) => {
   localStorage.setItem('myBooks', JSON.stringify(arr));
-}
+};
 
-function removeBook(title) {
+const removeBook = (title) => {
   const store = getFromLocalStorage();
   for (let i = 0; i < store.length; i += 1) {
     if (store[i].title === title) {
@@ -63,7 +63,7 @@ function removeBook(title) {
   }
   myBooks = store;
   saveToLocalStorage(myBooks);
-}
+};
 
 document.addEventListener('HTMLContentLoaded', displayBooks);
 
