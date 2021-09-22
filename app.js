@@ -31,12 +31,6 @@ const render = (book) => {
   bookSection.appendChild(hr);
 };
 
-const displayBooks = () => {
-  myBooks.forEach((book) => {
-    render(book);
-  });
-};
-
 const clearInput = () => {
   const title = document.querySelector('.title');
   const author = document.querySelector('.author');
@@ -45,14 +39,25 @@ const clearInput = () => {
 };
 
 const getFromLocalStorage = () => {
-  const books = JSON.parse(localStorage.getItem('myBooks'));
-  myBooks = books;
-  return myBooks;
+  const books = JSON.parse(localStorage.getItem('myBooks')) || [];
+  return books;
 };
 
-const saveToLocalStorage = (arr) => {
-  localStorage.setItem('myBooks', JSON.stringify(arr));
+const saveToLocalStorage = (book) => {
+  const books = getFromLocalStorage();
+  books.push(book);
+  myBooks = books;
+  localStorage.setItem('myBooks', JSON.stringify(myBooks));
 };
+
+const displayBooks = () => {
+  myBooks = getFromLocalStorage();
+  myBooks.forEach((book) => {
+    render(book);
+  });
+};
+
+displayBooks();
 
 const removeBook = (title) => {
   const store = getFromLocalStorage();
@@ -62,7 +67,7 @@ const removeBook = (title) => {
     }
   }
   myBooks = store;
-  saveToLocalStorage(myBooks);
+  localStorage.setItem('myBooks', JSON.stringify(myBooks));
 };
 
 document.addEventListener('HTMLContentLoaded', displayBooks);
@@ -73,8 +78,7 @@ form.addEventListener('submit', (e) => {
   const author = document.querySelector('.author').value;
   const book = new Book(title, author);
   render(book);
-  myBooks.push(book);
-  saveToLocalStorage(myBooks);
+  saveToLocalStorage(book);
   clearInput();
 });
 
