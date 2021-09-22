@@ -15,7 +15,7 @@ Additional description about the project and its features.
 - Javascript
 - Technologies used
 
-## Live Demo ![Live](https://abrormukimov.github.io/awesome-lib/)
+[Live Demo Link](https://abrormukimov.github.io/awesome-lib/)
 
 ## Getting Started
 
