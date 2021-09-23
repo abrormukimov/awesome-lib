@@ -3,27 +3,70 @@
 <head>
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no, viewport-fit=cover">
+  <link rel="preconnect" href="https://fonts.googleapis.com"> 
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin> 
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@200&display=swap" rel="stylesheet">
+  <script src="https://cdn.jsdelivr.net/npm/luxon@1.25.0/build/global/luxon.min.js"></script>
+  <link rel="shortcut icon" href="#">
   <link rel="stylesheet" href="style.css">
-  <title>Lib</title>
+  <title>Awesome books</title>
 </head>
 <body>
-  <div class="container">
-    <div class="books-ctn">
-      <h1 class="main-title">All Awesome Books</h1>
+  <header class="navbar">
+    <nav class="nav">
+      <div class="logo">Awesome Books</div>
+      <ul>
+        <li class="nav-list"> List</li>
+        <li class="nav-new">Add new</li>
+        <li class="nav-contact">Contact</li>
+      </ul>
+    </nav>
+    <div class="date">
     </div>
-    <hr>
-    <div class="form-title">Add a new Book</div>
-    <form id="form">
-      <label>
-        <input type="text" placeholder="Title" class="title">
-      </label>
-      <label>
-        <input type="text" placeholder="Author" class="author">
-      </label>
-      <button type="submit" class="add">Add</button>
-    </form>
+  </header>
+  <section class="lib-section">
+    <div class="lib-container">
+    <h1 class="title">Awesome books</h1>
+    <ul class="ul">
+      <li>
+        <span class="book-title">Da Vinci Code</span>
+        <span class="book-author">Dan Brown</span>
+        <button class="remove-btn">Remove</button>
+      </li>
+      <li>
+        <span class="book-title">Black Box Thinking</span>
+        <span class="book-author">Matthew Syed</span>
+        <button class="remove-btn">Remove</button>
+      </li>
+    </ul>
   </div>
+  </section>
+
+  <section class="form-section">
+    <form class="form">
+      <h2>Add a book</h2>
+      <input type="text" placeholder="Title" class="form-title"><br>
+      <input type="text" placeholder="Author" class="form-author"><br>
+      <input type="submit" class="add-btn" value="Add">
+    </form>
+  </section>
+
+  <section class="contact">
+      <h2>Contact information</h2>
+      <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Facilis expedita ea non impedit, dicta rem explicabo aliquid! Amet, repudiandae a!</p>
+      <ul>
+        <li>Our email: mail@mail.com</li>
+        <li>Our phone number: +0043554877547 </li>
+        <li>Our address: $streethome, 22 drive</li>
+      </ul>
+  </section>
+
+  <footer class="footer">
+    <p>Copyright &copy;</p>
+  </footer>
+  
   <script src="app.js"></script>
+
 </body>
 </html>

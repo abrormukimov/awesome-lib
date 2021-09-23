@@ -1,105 +1,188 @@
-html {
-  width: 500px;
-  margin: 0 auto;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-}
-
 * {
   margin: 0;
   padding: 0;
 }
 
-#form {
-  width: 300px;
-  margin: 0 auto;
+body {
+  height: 100vh;
   position: relative;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-family: 'Poppins', sans-serif;
 }
 
-#form * {
-  display: block;
-  margin: 15px auto;
+li {
+  display: flex;
+  height: 2rem;
+  align-items: center;
 }
 
-#form input, #form button {
-  padding: 5px 10px;
-  border: none;
-  border-radius: 3px;
-  outline: none;
-  background-color: rgb(233, 233, 233);
+li:nth-child(odd) {
+  background: rgb(199, 225, 255);
 }
 
-#form input {
-  width: 300px;
+.contact ul li {
+  background-color: #fff;
 }
 
-#form .add {
-  background-color: rgb(42, 42, 247);
-  color: white;
-  border: 1px solid rgb(42, 42, 247);
-  position: absolute;
-  top: 70px;
-  left: 275px;
+.nav {
+  width: 96vw;
+  border: 1px solid black;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
 }
 
-#form .add:hover {
-  color: blue;
-  font-weight: bold;
-  background-color: white;
+.nav ul {
+  display: flex;
+  list-style: none;
+  justify-content: space-evenly;
+  flex-direction: row;
+  width: 30%;
+}
+
+.nav ul li {
+  background: white;
+  border-right: 1px solid rgb(106, 106, 255);
+  padding-right: 40px;
+}
+
+.nav ul li:hover {
+  color: rgb(106, 106, 255);
   cursor: pointer;
 }
 
-.form-title {
-  text-align: center;
+.logo {
+  padding-left: 50px;
   font-weight: bold;
-  font-size: 24px;
-  margin-top: 20px;
+  font-size: 25px;
 }
 
-hr {
-  width: 100px;
-  margin: 30px auto;
-  font-weight: bold;
+.logo:hover {
+  cursor: pointer;
+  color: rgb(106, 106, 255);
 }
 
-.main-title {
-  text-align: center;
-  margin: 30px auto;
+.date {
+  text-align: right;
+  margin-top: 10px;
 }
 
-.book-section {
-  border: none;
-  border-radius: 3px;
-  display: flex;
-  align-items: center;
-  background-color: rgb(244, 244, 244);
+.lib-container {
+  max-width: 70%;
+  margin-top: 4.5rem;
+  margin-bottom: 1.5rem;
+  border: 1.5px solid blue;
   padding: 10px;
+  min-width: 500px;
 }
 
-.book-section:nth-child(odd) {
-  background: white;
+h1,
+h2 {
+  text-align: center;
+  margin-bottom: 4px;
+  color: rgb(106, 106, 255);
 }
 
 .book-title {
   flex: 3;
-  font-weight: bold;
+  padding: 3px;
 }
 
 .book-author {
-  flex: 5;
+  flex: 6;
+  padding: 3px;
 }
 
-.remove {
+.remove-btn {
   flex: 1;
-  border: 1px solid rgb(245, 124, 124); 
-  border-radius: 4px;
-  background: rgb(245, 124, 124);
-  padding: 4px 6px;
-  color: white;
+  border: 1.5px solid grey;
+  padding: 2px;
+  color: red;
+  font-weight: bold;
+  margin-right: 5px;
+  background: none;
+  box-shadow: 2px 2px 2px grey;
 }
 
-.remove:hover {
-  background: white;
-  color: red;
+hr {
+  width: 8rem;
+  margin: 0 auto;
+  color: rgb(106, 106, 255);
+}
+
+.form {
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+  align-items: center;
+  margin-top: 4.5rem;
+}
+
+input {
+  width: 12rem;
+  height: 1rem;
+  padding: 4px;
+  margin-top: 1rem;
+  outline: none;
+  border: 0.4px solid blue;
+  border-radius: 3px;
+}
+
+.add-btn {
+  margin-bottom: 3rem;
+  height: 2rem;
+  width: 4rem;
+  color: white;
+  background-color: blue;
+}
+
+.add-btn:hover {
+  border: 1px solid white;
   cursor: pointer;
-  border: 1px solid red;
+}
+
+.remove-btn:hover {
+  background: red;
+  color: white;
+  cursor: pointer;
+  box-shadow: 2px 2px 2px red;
+}
+
+.contact {
+  height: 70vh;
+  padding: 20px;
+  margin-top: 70px;
+}
+
+.contact p {
+  width: 70%;
+  text-align: center;
+  margin: auto;
+}
+
+.contact ul {
+  width: 70%;
+  margin: auto;
+  margin-top: 50px;
+}
+
+.form-section,
+.contact {
+  display: none;
+}
+
+.footer {
+  position: absolute;
+  left: 30px;
+  bottom: 30px;
+  width: 96vw;
+  border: 1px solid black;
+}
+
+.footer p {
+  padding: 13px;
 }
