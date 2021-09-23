@@ -14,7 +14,6 @@ class Book {
     const title = document.createElement('p');
     const author = document.createElement('p');
     const remove = document.createElement('button');
-    const hr = document.createElement('hr');
 
     bookSection.classList.add('book-section');
     title.classList.add('book-title');
@@ -23,14 +22,13 @@ class Book {
     remove.setAttribute('data-title', `${book.title}`);
 
     title.textContent = `${book.title}`;
-    author.textContent = `${book.author}`;
+    author.textContent = `by ${book.author}`;
     remove.textContent = 'Remove';
 
     booksCtn.appendChild(bookSection);
     bookSection.appendChild(title);
     bookSection.appendChild(author);
     bookSection.appendChild(remove);
-    bookSection.appendChild(hr);
   }
 
   static clearInput() {
@@ -79,10 +77,14 @@ form.addEventListener('submit', (e) => {
   e.preventDefault();
   const title = document.querySelector('.title').value;
   const author = document.querySelector('.author').value;
-  const book = new Book(title, author);
-  Book.render(book);
-  Book.saveToLocalStorage(book);
-  Book.clearInput();
+  if (title !== '') {
+    const book = new Book(title, author);
+    Book.render(book);
+    Book.saveToLocalStorage(book);
+    Book.clearInput();
+  } else {
+    alert("Please, enter the title and author of the book")
+  }
 });
 
 if (Book.myBooks) {
