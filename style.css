@@ -7,7 +7,6 @@ html {
 * {
   margin: 0;
   padding: 0;
-  margin-bottom: 10px;
 }
 
 #form {
@@ -64,6 +63,7 @@ hr {
 
 .main-title {
   text-align: center;
+  margin: 30px auto;
 }
 
 .book-section {
